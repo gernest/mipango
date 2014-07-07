@@ -1,0 +1,1 @@
+class Mipango.ApplicationController extends Batman.Controller
