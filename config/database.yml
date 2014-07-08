@@ -15,7 +15,7 @@ default: &default
   pool: 5
   username: geofrey
   password: mjuninunda
-  port: 3305
+  port: 3306
   host: localhost
 
 development:
