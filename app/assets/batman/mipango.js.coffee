@@ -16,6 +16,10 @@
 Batman.config.pathToHTML = '/assets/html'
 
 class Mipango extends Batman.App
+
+  @resources 'plans', ->
+    @resources( 'plots')
+
   # @resources 'products'
   # @resources 'discounts', except: ['edit']
   # @resources 'customers', only: ['new', 'show']
@@ -30,6 +34,6 @@ class Mipango extends Batman.App
   # @route 'apps', 'apps#index'
   # @route 'apps/private', 'apps#private', as: 'privateApps'
 
-  @root 'main#index'
+  @root 'plans#index'
 
 (global ? window).Mipango = Mipango

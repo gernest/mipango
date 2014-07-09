@@ -1,0 +1,6 @@
+<span data-bind="'plan' | pluralize plans.length"></span>
+<ul>
+    <li data-foreach-plan="plans">
+        <a data-bind="plan.title" data-route="plan"></a>
+    </li>
+</ul>

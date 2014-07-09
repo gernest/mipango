@@ -6,8 +6,7 @@ class BatmanController < ApplicationController
       path = request.path[prefix_length..-1]
       render :text => Rails.application.assets[path]
     else
-      render nothing: true, layout: 'batman'
+      render 'layouts/batman'
     end
   end
-
 end

@@ -13,6 +13,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'thin'
 
+gem 'faker'
+
+gem 'slim-rails'
+
 group :assets do
     gem 'sprockets-rails'
     gem 'sass-rails', '~> 4.0.3'
@@ -20,6 +24,14 @@ group :assets do
     gem 'coffee-rails', '~> 4.0.0'
 end
 
+group :development  do
+    gem 'pry-rails'
+end
+
+group :development, :test do
+    gem 'better_errors'
+    gem 'binding_of_caller'
+end
 # Use debugger
 gem 'debugger', group: [:development, :test]
 
