@@ -1,6 +1,7 @@
 
-
 /.bundle
 /log/*.log
 /tmp
 /.idea
+config/database.yml
+config/secrets.yml

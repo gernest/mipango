@@ -7,8 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div data-yield="main"></div>
+<div class="container">
+  <div data-view="NavigationView"></div>
+  <div data-yield="main"></div>
+</div>
 
 <script type="text/javascript">
   Mipango.run();
