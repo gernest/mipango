@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714223529) do
+ActiveRecord::Schema.define(version: 20140715212204) do
 
   create_table "notes", force: true do |t|
     t.string   "title"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140714223529) do
   create_table "plots", force: true do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "parent_plot", default: 0, null: false
+    t.integer  "parent_plot_id", default: 0, null: false
     t.integer  "plan_id"
     t.datetime "created_at"
     t.datetime "updated_at"
