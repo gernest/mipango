@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707155001) do
+ActiveRecord::Schema.define(version: 20140714223529) do
 
   create_table "notes", force: true do |t|
     t.string   "title"
@@ -47,6 +47,11 @@ ActiveRecord::Schema.define(version: 20140707155001) do
 
   add_index "plots", ["plan_id"], name: "index_plots_on_plan_id", using: :btree
 
+  create_table "plots_users", id: false, force: true do |t|
+    t.integer "plot_id"
+    t.integer "user_id"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -64,10 +69,5 @@ ActiveRecord::Schema.define(version: 20140707155001) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "users_plots", force: true do |t|
-    t.integer "user_id"
-    t.integer "plot_id"
-  end
 
 end

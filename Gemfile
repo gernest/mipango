@@ -13,7 +13,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'thin'
 
-gem 'faker'
 
 gem 'bootstrap-sass'
 
@@ -29,7 +28,10 @@ end
 group :development, :test do
     gem 'better_errors'
     gem 'binding_of_caller'
-    gem 'jasmine-rails'
+    gem 'rspec-rails'
+    gem 'shoulda-matchers'
+    gem 'faker'
+    gem 'factory_girl_rails'
 end
 # Use debugger
 gem 'debugger', group: [:development, :test]

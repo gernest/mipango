@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
     has_many :notes
     has_many :plans
     has_and_belongs_to_many :plots
+
+    def make_a_plan(title)
+        self.plans.create(:title=>title)
+    end
 end
