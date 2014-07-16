@@ -2,11 +2,9 @@ describe User do
     let(:user){
         create(:user)
     }
-    #noinspection RubyQuotedStringsInspection
     describe "#make_a_plan" do
 
         let(:new_plan){
-        #noinspection RubyQuotedStringsInspection
         new_plan=user.make_a_plan "Simple test plan"
         }
 
@@ -15,11 +13,9 @@ describe User do
         }
 
         it {
-            #noinspection RubyQuotedStringsInspection,RubyQuotedStringsInspection
             expect{user.make_a_plan("bla", "bla")}.to raise_error
         }
 
-        #noinspection RubyQuotedStringsInspection
         it "should save the plan given a title" do
             expect(new_plan).to be_an_instance_of( Plan)
         end
@@ -30,7 +26,6 @@ describe User do
         let(:plan){
             user.make_a_plan(Faker::Name.title)
         }
-        #noinspection RubyQuotedStringsInspection
         describe "#take_a_note" do
             let(:note){
                 {title: Faker::Name.title, body: Faker::Lorem.paragraph}
@@ -40,7 +35,6 @@ describe User do
             end
 
             it {
-                #noinspection RubyQuotedStringsInspection
                 expect{user.take_a_note("plan",note)}.to raise_error( ArgumentError)
             }
 
@@ -49,7 +43,6 @@ describe User do
             end
 
         end
-        #noinspection RubyQuotedStringsInspection
         describe "#make_a_plot" do
             let(:plot){
                 {title: Faker::Name.title, body: Faker::Lorem.paragraph}
@@ -86,7 +79,6 @@ describe User do
             user.make_a_plot(plan,{title: Faker::Name.title, body: Faker::Lorem.paragraph})
             user.plots[0]
         }
-        #noinspection RubyQuotedStringsInspection
         describe "#take_a_note" do
             let(:note){
                 {title: Faker::Name.title, body: Faker::Lorem.paragraph}
