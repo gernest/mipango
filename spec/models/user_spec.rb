@@ -2,9 +2,11 @@ describe User do
     let(:user){
         create(:user)
     }
+    #noinspection RubyQuotedStringsInspection
     describe "#make_a_plan" do
 
         let(:new_plan){
+        #noinspection RubyQuotedStringsInspection
         new_plan=user.make_a_plan "Simple test plan"
         }
 
@@ -13,9 +15,11 @@ describe User do
         }
 
         it {
+            #noinspection RubyQuotedStringsInspection,RubyQuotedStringsInspection
             expect{user.make_a_plan("bla", "bla")}.to raise_error
         }
 
+        #noinspection RubyQuotedStringsInspection
         it "should save the plan given a title" do
             expect(new_plan).to be_an_instance_of( Plan)
         end
@@ -26,6 +30,7 @@ describe User do
         let(:plan){
             user.make_a_plan(Faker::Name.title)
         }
+        #noinspection RubyQuotedStringsInspection
         describe "#take_a_note" do
             let(:note){
                 {title: Faker::Name.title, body: Faker::Lorem.paragraph}
@@ -35,6 +40,7 @@ describe User do
             end
 
             it {
+                #noinspection RubyQuotedStringsInspection
                 expect{user.take_a_note("plan",note)}.to raise_error( ArgumentError)
             }
 
@@ -43,6 +49,7 @@ describe User do
             end
 
         end
+        #noinspection RubyQuotedStringsInspection
         describe "#make_a_plot" do
             let(:plot){
                 {title: Faker::Name.title, body: Faker::Lorem.paragraph}
@@ -53,28 +60,45 @@ describe User do
             end
 
             it 'should set the parent_id field' do
-                plot[:parent_plot_id]=1
-                new_plot=user.make_a_plot(plan,plot)
-                expect(new_plot.parent_plot).to eq(1)
+                user.make_a_plot(plan,plot)
+                test_plot=user.plots.first
+                test_plot.parent_plot=test_plot
+                expect(test_plot.parent_plot.id).to eql test_plot.id
+
             end
 
             it 'should update the many to many realationship' do
+                user.make_a_plot(plan,plot)
+                expect(user.plots.first).to be_a_kind_of Plot
             end
 
             it 'should save the plot' do
-                expect(user.make_a_plot(plan,plot)).to be_a_kind_of Plot
+                expect{user.make_a_plot(plan,plot)}.not_to raise_error
             end
         end
     end
 
     context 'we are working on a plot' do
+        let(:plan){
+            user.make_a_plan(Faker::Name.title)
+        }
+        let(:plot){
+            user.make_a_plot(plan,{title: Faker::Name.title, body: Faker::Lorem.paragraph})
+            user.plots[0]
+        }
+        #noinspection RubyQuotedStringsInspection
         describe "#take_a_note" do
-            it 'sould accept two arguments, plan object and note itself' do
-            end
-            it 'should have valid privilege to write on the object' do
-            end
-            it 'should save the resulting  note object' do
-            end
+            let(:note){
+                {title: Faker::Name.title, body: Faker::Lorem.paragraph}
+            }
+
+            it{
+                expect{user.take_a_note(plot,note)}.not_to raise_error
+            }
+            it{
+                expect(user.take_a_note(plot,note)).to be_a_kind_of Note
+            }
         end
     end
 end
+
