@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root to: "main#index"
-  get "(*redirect_path)", to: "main#index", constraints: lambda { |request| request.format == "text/html" }
 
   devise_for :users
+  get "(*redirect_path)", to: "batman#index", constraints: lambda { |request| request.format == "text/html" }
+
 
   resources :plans do
     resources :plots do

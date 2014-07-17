@@ -25,16 +25,16 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 group :development do
-    gem 'pry-rails'
+  gem 'pry-rails'
 end
 
 group :development, :test do
-    gem 'better_errors'
-    gem 'binding_of_caller'
-    gem 'rspec-rails'
-    gem 'shoulda-matchers'
-    gem 'faker'
-    gem 'factory_girl_rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'faker'
+  gem 'factory_girl_rails'
 end
 # Use debugger
 gem 'debugger', group: [:development, :test]
