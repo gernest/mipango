@@ -13,6 +13,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'thin'
 
+gem 'haml-rails'
+gem 'haml_assets'
+
 
 gem 'bootstrap-sass'
 
