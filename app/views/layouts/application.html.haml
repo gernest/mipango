@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %title Mipango
+    =stylesheet_link_tag 'application'
+    =javascript_include_tag 'application'
+    =csrf_meta_tags
+  %body
+    / the top fixed navbar
+    %div.navbar.navbar-default.navbar-static-top
+      .navbar-header
+        %button{type: "button", class: ["navbar-toggle","toggle-left", "hidden-md","hidden-lg"],:data=>{:toggle=>"sidebar",:target=>".sidebar-left"}}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+    %div#main.container-fluid
+      %div.row
+        %div.col-md-2.col-xl-2.col-sm-2
+          =render "partial/left_side_bar"
+        %div.col-md-8.col-xl-2
+          =yield
+        %div.col-md-2.col-xl-2
+          =render "partial/right_sidebar"
+
