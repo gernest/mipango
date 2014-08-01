@@ -16,13 +16,14 @@ gem 'thin'
 gem 'haml-rails'
 gem 'haml_assets'
 
+gem "simple-navigation"
 
-gem 'bootstrap-sass'
 
 gem 'sass-rails'
 gem 'sprockets-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'autoprefixer-rails'
 
 group :development do
   gem 'pry-rails'
@@ -42,5 +43,4 @@ gem 'debugger', group: [:development, :test]
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
-gem 'batman-rails'
 gem 'devise'

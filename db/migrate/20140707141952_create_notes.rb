@@ -4,7 +4,7 @@ class CreateNotes < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.references :user, index: true
-      t.references :plan, index: true
+      t.references :plans, index: true
       t.references :plot, index: true
 
       t.timestamps

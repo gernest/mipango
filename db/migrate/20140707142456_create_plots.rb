@@ -5,7 +5,7 @@ class CreatePlots < ActiveRecord::Migration
       t.text :body
       t.integer :parent_plot, default: 0, null: false
 
-      t.references :plan, index: true
+      t.references :plans, index: true
       t.timestamps
     end
   end

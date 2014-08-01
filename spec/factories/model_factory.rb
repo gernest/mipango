@@ -4,7 +4,7 @@ FactoryGirl.define do
     password { Faker::Internet.password }
   end
 
-  factory :plan do
+  factory :plans do
     title { Faker::Name.title }
     user
   end
