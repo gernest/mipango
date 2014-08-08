@@ -36,6 +36,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'faker'
   gem 'factory_girl_rails'
+  gem 'capybara'
 end
 # Use debugger
 gem 'debugger', group: [:development, :test]
