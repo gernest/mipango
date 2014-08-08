@@ -1,5 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "main/index.html.haml", :type => :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "main/index.html.haml", :type => :view do
+  it{
+    "there is a long way to go"
+  }
 end
